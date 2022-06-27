@@ -55,8 +55,7 @@ textarea {
 }
 
 #postbtn {
-  background-color: limegreen;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 30%;
   cursor: pointer;
   margin: auto;
@@ -65,7 +64,8 @@ textarea {
   outline: none;
   border: none;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: white;
+  color: black;
+  border: 1px solid black;
 }
 
 .out {
