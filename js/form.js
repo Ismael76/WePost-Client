@@ -6,11 +6,11 @@ function init() {
   document.getElementById("btnSearch").addEventListener("click", (ev) => {
     ev.preventDefault();
     const heading = document.createElement("p");
-    let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=20&q=`;
+    let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=30&q=`;
     let str = document.getElementById("search").value.trim();
     url = url.concat(str);
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 30; i++) {
       fetch(url)
         .then((response) => response.json())
         .then((content) => {
