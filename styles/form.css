@@ -1,29 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
 * {
   font-size: 25px;
   line-height: 1.6;
   font-family: "Roboto", sans-serif;
 }
 
-/*body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}*/
-
-
 h1 {
   text-align: center;
-  font-family: fantasy;
+  font-family: "Pacifico", cursive;
   text-transform: uppercase;
   font-weight: 400 !important;
-  letter-spacing: 1px;
+  color: rgb(0, 255, 0);
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
 section {
-  background: rgb(17, 253, 17);
+  background: white;
   color: white;
   width: 100%;
   max-width: 800px;
+  border-radius: 20px;
 }
 
 form {
@@ -42,6 +40,7 @@ img {
 textarea {
   resize: none;
   margin: auto;
+  padding: 0.1rem 0.5rem;
 }
 
 #text {
@@ -53,6 +52,7 @@ textarea {
   font-family: fantasy;
   cursor: pointer;
   letter-spacing: 1px;
+  color: rgba(0, 255, 0, 0.938);
 }
 
 #postbtn {
@@ -61,12 +61,34 @@ textarea {
   cursor: pointer;
   margin: auto;
   margin-top: 1rem;
-  margin-bottom: 1rem;
   outline: none;
   border: none;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: black;
-  border: 1px solid black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  background: rgba(0, 255, 0, 0.938);
+}
+
+#postbtn:hover {
+  background-color: rgba(3, 112, 3, 0.938);
+}
+
+#btnSearch {
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  padding: 0.1rem 0.3rem;
+  background: rgba(0, 255, 0, 0.938);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#btnSearch:hover {
+  background-color: rgba(3, 112, 3, 0.938);
+}
+
+#search {
+  padding: 0.2rem 0.5rem;
+  width: 70%;
 }
 
 .out {
