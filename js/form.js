@@ -5,10 +5,7 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
   document.getElementById("btnSearch").addEventListener("click", (ev) => {
     ev.preventDefault();
-<<<<<<< HEAD
-=======
     out.innerHTML = "";
->>>>>>> a3ff707b4d74112c87b8b6863b8184baf8132930
     let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=30&q=`;
     let str = document.getElementById("search").value.trim();
     url = url.concat(str);

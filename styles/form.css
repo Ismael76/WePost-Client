@@ -6,7 +6,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-h1 {
+#formTitle {
   text-align: center;
   font-family: "Pacifico", cursive;
   text-transform: uppercase;
@@ -16,7 +16,7 @@ h1 {
   margin-top: 1rem;
 }
 
-section {
+.formContainer {
   background: white;
   color: white;
   width: 100%;
@@ -24,7 +24,7 @@ section {
   border-radius: 20px;
 }
 
-form {
+#formBody {
   font-family: inherit;
   font-size: inherit;
   display: flex;
