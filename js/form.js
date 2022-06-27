@@ -29,5 +29,17 @@ function init() {
           console.error(err);
         });
     }
+    let selected = true;
+    document.addEventListener("click", (e) => {
+      if (e.target.matches("img")) {
+        if (selected) {
+          e.target.classList.add("selected");
+          selected = false;
+        } else {
+          e.target.classList.remove("selected");
+          selected = true;
+        }
+      }
+    });
   });
 }
