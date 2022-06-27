@@ -11,19 +11,22 @@
 </head>
 
 <body>
-  <main>
-    <section class="s1">
-      <h1>Type your post here</h1>
-      <form>
-        <input id="post" type="text">
+
+  <section class="formContainer">
+    <h1>Post</h1>
+    <form>
+      <textarea name="" id="text" cols="15" rows="5" placeholder="What's Happening?"></textarea>
+      <br>
+      <div class="gifContainer example">
         <label id="GIF" for="search">GIF</label>
         <input id="search" type="search" />
         <button id="btnSearch">Go</button>
-      </form>
-      <h1 id="header"></h1>
+      </div>
       <div class="out"></div>
-    </section>
-  </main>
+      <input id="postbtn" type="submit" value="Post">
+    </form>
+  </section>
+
 </body>
 
 </html>
