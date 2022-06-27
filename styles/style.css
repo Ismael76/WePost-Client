@@ -1,0 +1,36 @@
+/* styling the main section */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    /* background-color: black; */
+    display: flex;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.post-box {
+    width: 30%;
+    background-color: grey;
+    color: #000000;
+    margin: 1rem 1rem 0 0;
+}
+
+.post-list {
+    width: 70%;
+    background-color: grey;
+    color: #000000;
+    margin: 1rem 0 0 1rem;
+}

@@ -20,8 +20,8 @@
   }
 
   img {
-    width: 100%;
-    max-width: 100%;
+    width: 300px;
+    max-width: 300px;
   }
 
 #text {
@@ -42,3 +42,9 @@
     border-radius: 30%;
     cursor: pointer;
   }
+  
+  .out {
+  max-width: 800px;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  display: flex;
