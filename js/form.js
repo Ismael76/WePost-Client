@@ -19,6 +19,7 @@ function init() {
           let img = document.createElement("img");
           img.src = content.data[i].images.downsized.url;
           img.alt = content.data[i].title;
+          img.setAttribute("id", "gifImg");
           fig.appendChild(img);
           let out = document.querySelector(".out");
           out.insertAdjacentElement("afterbegin", fig);
