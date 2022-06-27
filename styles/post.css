@@ -1,7 +1,10 @@
 .postContainer {
-  max-width: 700px;
+  /* max-width: 700px; */
   border-bottom: 1px solid gray;
   background-color: lightgray;
+  padding: 1rem;
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 15px;
 }
 
 .postUserContainer {
@@ -58,8 +61,8 @@ img {
 
 .gif {
   display: flex;
-  width: 75%;
-  height: 250px;
+  width: 50%;
+  height: auto;
   margin: auto;
   margin-bottom: 1rem;
   margin-top: 1rem;
