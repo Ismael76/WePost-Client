@@ -4,11 +4,8 @@ let postText = document.getElementById("post");
 document.addEventListener("DOMContentLoaded", init);
 function init() {
   document.getElementById("btnSearch").addEventListener("click", (ev) => {
-    ev.preventDefault(); //to stop the page reload
+    ev.preventDefault();
     const heading = document.createElement("p");
-    //const node = document.createTextNode("This is a new paragraph.");
-    //heading.appendChild(node);
-    heading.textContent = postText.value;
     let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=20&q=`;
     let str = document.getElementById("search").value.trim();
     url = url.concat(str);

@@ -1,50 +1,57 @@
 * {
-    font-size: 25px;
-    line-height: 1.6;
-    font-family: 'Roboto', sans-serif;
-  }
+  font-size: 25px;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+}
 
-  h1 {
-    text-align: center;
-  }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  section {
-    background-color: grey;
-    color: white;
-    width: 50%
-  }
-  
-  form * {
-    font-family: inherit;
-    font-size: inherit;;
-  }
+h1 {
+  text-align: center;
+}
 
-  img {
-    width: 300px;
-    max-width: 300px;
-  }
+section {
+  background-color: grey;
+  color: white;
+  width: 50%;
+}
+
+form * {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
 
 #text {
-    width: 98%;
+  width: 98%;
 }
 
 #GIF {
-    margin-left: 10px;
-    font-family: fantasy;
-    cursor: pointer;
+  margin-left: 10px;
+  font-family: fantasy;
+  cursor: pointer;
 }
 
 #postbtn {
-    margin-top: 20px;
-    background-color: limegreen;
-    margin-left : 325px;
-    margin-bottom: 10px;
-    border-radius: 30%;
-    cursor: pointer;
-  }
-  
-  .out {
+  margin-top: 20px;
+  background-color: limegreen;
+  margin-left: 325px;
+  margin-bottom: 10px;
+  border-radius: 30%;
+  cursor: pointer;
+}
+
+.out {
   max-width: 800px;
   overflow-x: scroll;
   flex-wrap: nowrap;
   display: flex;
+}
