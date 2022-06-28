@@ -38,6 +38,27 @@ const getPosts = async () => {
         postContainer.append(commentContainer);
         commentContainer.append(commentInput);
         commentContainer.append(commentBtn);
+
+        commentBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const commentInfo = {
+            Description: commentInput.value,
+          };
+          const options = {
+            method: "POST",
+            body: JSON.stringify(commentInfo),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          };
+          fetch("http://localhost:3500/comments", options)
+            .then((r) => r.json())
+            .catch((err) => {
+              console.log(err);
+            });
+        });
+
         opened = true;
       } else {
         postContainer.removeChild(commentContainer);
