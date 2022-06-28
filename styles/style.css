@@ -108,6 +108,7 @@ button {
   width: 100%;
   text-align: center;
   transition: background 0.4s linear;
+  
 }
 .menu li:last-of-type {
   margin-bottom: 0;
