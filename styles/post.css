@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 .postContainer {
   /* max-width: 700px; */
   border-bottom: 1px solid gray;
@@ -10,6 +11,7 @@
 .postUserContainer {
   display: flex;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .postUserContainer p {
@@ -87,18 +89,39 @@ img {
 }
 
 .commentInput {
-  width: 70%;
+  width: 90%;
   padding: 0.5rem 1rem;
   border-radius: 10px;
   border: none;
+  margin-bottom: 2rem;
 }
 
 .commentContainer {
-  display: flex;
-  margin: 3rem 1rem;
+  margin: 3rem 0;
   align-items: center;
+  padding-bottom: 1rem;
 }
 
-.test {
-  border: 1px solid red;
+.commentTitle {
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  color: #556427;
+  letter-spacing: 1px;
+}
+
+.singleCommentContainer {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem;
+  border-bottom: 1px solid black;
+}
+
+.singleCommentContainer p {
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+.comments {
+  color: black;
+  margin: auto;
 }
