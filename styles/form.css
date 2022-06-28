@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+.modal {
+  font-size: 25px;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+}
+
+#formTitle {
+  text-align: center;
+  font-family: "Pacifico", cursive;
+  text-transform: uppercase;
+  font-weight: 400 !important;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.formContainer {
+  background: #556427;
+  color: white;
+  width: 100%;
+  max-width: 800px;
+}
+
+#formBody {
+  font-family: inherit;
+  font-size: inherit;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+#gifImg {
+  width: 300px;
+  height: 300px;
+}
+
+.selected {
+  border: 2px solid red;
+}
+
+textarea {
+  resize: none;
+  margin: auto;
+  padding: 0.1rem 0.5rem;
+}
+
+#text {
+  width: 98%;
+}
+
+#GIF {
+  margin-left: 10px;
+  font-family: fantasy;
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: white;
+}
+
+#postbtn {
+  border-radius: 10px;
+  width: 30%;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 1rem;
+  outline: none;
+  border: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#postbtn:hover {
+  background-color: rgba(3, 112, 3, 0.938);
+}
+
+#btnSearch {
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#btnSearch:hover {
+  background-color: rgba(3, 112, 3, 0.938);
+}
+
+#search {
+  padding: 0.2rem 0.5rem;
+  width: 70%;
+}
+
+.out {
+  max-width: 800px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  display: flex;
+}
+
+.gifContainer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+figure {
+  margin: 0.2rem;
+}
