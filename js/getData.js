@@ -15,11 +15,18 @@ const getPosts = async () => {
     let postDescription = document.createElement("p");
     let imgProfile = document.createElement("img");
     let iconComment = document.createElement("img");
-    let iconHeart = document.createElement("svg");
-    let heartUse = document.createElement("use");
+
+    let heartNum = document.createElement("span");
+    let iconHeart = document.createElement("img");
+
     let iconEmojiOne = document.createElement("img");
+    let emojiOneNum = document.createElement("span");
+
     let iconEmojiTwo = document.createElement("img");
+    let emojiTwoNum = document.createElement("span");
+
     let iconEmojiThree = document.createElement("img");
+    let emojiThreeNum = document.createElement("span");
 
     let commentContainer = document.createElement("div");
     let commentInput = document.createElement("input");
@@ -86,9 +93,13 @@ const getPosts = async () => {
       iconEmojiTwo.setAttribute("src", "./images/laughing.svg");
       iconEmojiThree.setAttribute("src", "./images/happy.svg");
       iconComment.setAttribute("src", "./images/comment.svg");
-      heartUse.setAttribute("href", "./images/sprite.svg#heart");
+      iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
+      heartNum.textContent = 0;
       name.textContent = "Anonymous";
+      emojiOneNum.textContent = 0;
+      emojiThreeNum.textContent = 0;
+      emojiTwoNum.textContent = 0;
     } else {
       gif.setAttribute("src", data[i].URL);
       postDescription.textContent = data[i].Description;
@@ -96,9 +107,13 @@ const getPosts = async () => {
       iconEmojiTwo.setAttribute("src", "./images/laughing.svg");
       iconEmojiThree.setAttribute("src", "./images/happy.svg");
       iconComment.setAttribute("src", "./images/comment.svg");
-      heartUse.setAttribute("href", "./images/sprite.svg#heart");
+      iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
+      heartNum.textContent = 0;
       name.textContent = "Anonymous";
+      emojiOneNum.textContent = 0;
+      emojiThreeNum.textContent = 0;
+      emojiTwoNum.textContent = 0;
     }
 
     postList.append(postContainer);
@@ -112,11 +127,14 @@ const getPosts = async () => {
 
     postReactionContainer.append(divOne);
     divOne.append(iconComment);
+    divOne.append(heartNum);
     divOne.append(iconHeart);
-    iconHeart.append(heartUse);
     postReactionContainer.append(divTwo);
+    divTwo.append(emojiOneNum);
     divTwo.append(iconEmojiOne);
+    divTwo.append(emojiTwoNum);
     divTwo.append(iconEmojiTwo);
+    divTwo.append(emojiThreeNum);
     divTwo.append(iconEmojiThree);
   }
 };
