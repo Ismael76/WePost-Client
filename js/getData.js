@@ -1,5 +1,11 @@
 const postList = document.querySelector(".post-list");
 
+let commentInput = document.createElement("input");
+let commentBtn = document.createElement("input");
+let commentContainer = document.createElement("div");
+let comments = document.createElement("div");
+let commentTitle = document.createElement("h1");
+
 const getPosts = async () => {
   const response = await fetch("http://localhost:3500");
   const data = await response.json();
@@ -28,30 +34,34 @@ const getPosts = async () => {
     let iconEmojiThree = document.createElement("img");
     let emojiThreeNum = document.createElement("span");
 
-    let commentContainer = document.createElement("div");
-    let commentInput = document.createElement("input");
-    let commentBtn = document.createElement("input");
     commentInput.setAttribute("type", "text");
     commentBtn.setAttribute("type", "submit");
     commentBtn.setAttribute("value", "Comment");
     let gif = document.createElement("img");
     let opened = false;
 
-    iconComment.addEventListener("click", () => {
+    iconComment.addEventListener("click", (e) => {
+      commentContainer.remove();
       if (opened == false) {
+        const comments = Array.from(commentContainer.children);
+        for (let i = 2; i < comments.length; i++) {
+          comments[i].remove();
+        }
         commentContainer.classList.add("commentContainer");
         commentBtn.classList.add("commentBtn");
         commentInput.classList.add("commentInput");
+        commentTitle.classList.add("commentTitle");
         postContainer.append(commentContainer);
         commentContainer.append(commentInput);
         commentContainer.append(commentBtn);
-
+        commentTitle.textContent = "Comments";
+        commentContainer.append(commentTitle);
         commentBtn.addEventListener("click", (e) => {
-          e.preventDefault();
-
           const commentInfo = {
+            PostID: data[i].PostID,
             Description: commentInput.value,
           };
+
           const options = {
             method: "POST",
             body: JSON.stringify(commentInfo),
@@ -59,16 +69,25 @@ const getPosts = async () => {
               "Content-Type": "application/json",
             },
           };
+
           fetch("http://localhost:3500/comments", options)
             .then((r) => r.json())
             .catch((err) => {
-              console.log(err);
+              console.log("Oh No!");
             });
+          location.reload();
         });
+
+        getComments(data[i].PostID);
 
         opened = true;
       } else {
-        postContainer.removeChild(commentContainer);
+        commentContainer.remove();
+
+        const comments = Array.from(commentContainer.children);
+        for (let i = 2; i < comments.length; i++) {
+          comments[i].remove();
+        }
         opened = false;
       }
     });
@@ -136,6 +155,31 @@ const getPosts = async () => {
     divTwo.append(iconEmojiTwo);
     divTwo.append(emojiThreeNum);
     divTwo.append(iconEmojiThree);
+  }
+};
+
+const getComments = async (id) => {
+  const response = await fetch("http://localhost:3500/comments");
+  const commentData = await response.json();
+  for (let i = 0; i < commentData.length; i++) {
+    if (commentData[i].PostID === id) {
+      let singleCommentContainer = document.createElement("div");
+      let comment = document.createElement("p");
+      let imgProfile = document.createElement("img");
+
+      singleCommentContainer.classList.add("singleCommentContainer");
+      comment.classList.add("comments");
+
+      comment.textContent = commentData[i].Description;
+      imgProfile.setAttribute("src", "./images/user.svg");
+
+      commentContainer.append(singleCommentContainer);
+      singleCommentContainer.append(imgProfile);
+      singleCommentContainer.append(comment);
+
+      // commentContainer.append(comments);
+      // comments.append(comment);
+    }
   }
 };
 

@@ -14,8 +14,6 @@ document.addEventListener("keydown", (e) => {
 });
 
 const addPost = (e) => {
-  e.preventDefault();
-
   const postInfo = {
     Description: postText.value,
     URL: url,
@@ -30,7 +28,9 @@ const addPost = (e) => {
   };
 
   fetch("http://localhost:3500", options)
-    .then((r) => r.json())
+    .then((r) => {
+      r.json();
+    })
     .catch((err) => {
       console.log(err);
     });
