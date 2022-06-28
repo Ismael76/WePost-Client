@@ -15,6 +15,16 @@ const getPosts = async () => {
     let postDescription = document.createElement("p");
     let imgProfile = document.createElement("img");
     let iconComment = document.createElement("img");
+    iconComment.addEventListener("click", () => {
+    postContainer.style.height = "1000px";
+    const textbox = document.createElement("input")
+    textbox.setAttribute("type", "text");
+    const btn = document.createElement("button");
+    btn.innerText = "Post";
+    postContainer.append(textbox);
+    postContainer.append(btn);
+}, {once : true}); 
+
     let iconEmojiOne = document.createElement("img");
     let iconEmojiTwo = document.createElement("img");
     let iconEmojiThree = document.createElement("img");

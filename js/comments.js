@@ -1,9 +1,20 @@
 // const postBox = document.getElementsByClassName("postContainer");
-const postBox = document.querySelector("#postbox")
-const comment = document.querySelector("#com")
+/*const postBox = document.querySelector("#postbox")
+const comment = document.querySelector("#com")*/
 
+/*comment.addEventListener("click", () => {
+    console.log("Hello World")
+})
 
-comment.addEventListener("click", () => {
+const getComments = async (e) => {
+    const response = await fetch("http://localhost:3500");
+    const data = await response.json();
+    for (let i = 0; i < data.length; i++) {
+        
+    }
+}*/
+
+/*comment.addEventListener("click", () => {
     postBox.style.height = "400px";
     const textbox = document.createElement("input")
     textbox.setAttribute("type", "text");
@@ -11,7 +22,7 @@ comment.addEventListener("click", () => {
     btn.innerText = "Post";
     postBox.append(textbox);
     postBox.append(btn);
-}, {once : true});
+}, {once : true});*/
 
 /*document.querySelectorAll(".postContainer").forEach(item => {
 document.querySelectorAll(".comment").forEach(element => {
