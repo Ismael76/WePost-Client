@@ -1,5 +1,8 @@
 const postList = document.querySelector(".post-list");
 
+let commentInput = document.createElement("input");
+let commentBtn = document.createElement("input");
+
 const getPosts = async () => {
   const response = await fetch("http://localhost:3500");
   const data = await response.json();
@@ -29,8 +32,6 @@ const getPosts = async () => {
     let emojiThreeNum = document.createElement("span");
 
     let commentContainer = document.createElement("div");
-    let commentInput = document.createElement("input");
-    let commentBtn = document.createElement("input");
     commentInput.setAttribute("type", "text");
     commentBtn.setAttribute("type", "submit");
     commentBtn.setAttribute("value", "Comment");
@@ -45,27 +46,6 @@ const getPosts = async () => {
         postContainer.append(commentContainer);
         commentContainer.append(commentInput);
         commentContainer.append(commentBtn);
-
-        commentBtn.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          const commentInfo = {
-            Description: commentInput.value,
-          };
-          const options = {
-            method: "POST",
-            body: JSON.stringify(commentInfo),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          };
-          fetch("http://localhost:3500/comments", options)
-            .then((r) => r.json())
-            .catch((err) => {
-              console.log(err);
-            });
-        });
-
         opened = true;
       } else {
         postContainer.removeChild(commentContainer);
@@ -138,5 +118,28 @@ const getPosts = async () => {
     divTwo.append(iconEmojiThree);
   }
 };
+
+const postComment = () => {
+  const commentInfo = {
+    Description: commentInput.value,
+  };
+
+  const options = {
+    method: "POST",
+    body: JSON.stringify(commentInfo),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch("http://localhost:3500/comments", options)
+    .then((r) => r.json())
+    .catch((err) => {
+      console.log("Oh No!");
+    });
+  location.reload();
+};
+
+commentBtn.addEventListener("click", postComment);
 
 getPosts();
