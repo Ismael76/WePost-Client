@@ -15,10 +15,35 @@ const getPosts = async () => {
     let postDescription = document.createElement("p");
     let imgProfile = document.createElement("img");
     let iconComment = document.createElement("img");
+    let iconHeart = document.createElement("svg");
+    let heartUse = document.createElement("use");
     let iconEmojiOne = document.createElement("img");
     let iconEmojiTwo = document.createElement("img");
     let iconEmojiThree = document.createElement("img");
+
+    let commentContainer = document.createElement("div");
+    let commentInput = document.createElement("input");
+    let commentBtn = document.createElement("input");
+    commentInput.setAttribute("type", "text");
+    commentBtn.setAttribute("type", "submit");
+    commentBtn.setAttribute("value", "Comment");
     let gif = document.createElement("img");
+    let opened = false;
+
+    iconComment.addEventListener("click", () => {
+      if (opened == false) {
+        commentContainer.classList.add("commentContainer");
+        commentBtn.classList.add("commentBtn");
+        commentInput.classList.add("commentInput");
+        postContainer.append(commentContainer);
+        commentContainer.append(commentInput);
+        commentContainer.append(commentBtn);
+        opened = true;
+      } else {
+        postContainer.removeChild(commentContainer);
+        opened = false;
+      }
+    });
 
     postContainer.classList.add("postContainer");
     postReactionContainer.classList.add("postReactionContainer");
@@ -32,6 +57,7 @@ const getPosts = async () => {
     iconEmojiTwo.classList.add("emoji", "hover");
     iconEmojiThree.classList.add("emoji", "hover");
     gif.classList.add("gif");
+    iconHeart.classList.add("heart", "hover");
 
     if (data[i].URL == null) {
       postDescription.textContent = data[i].Description;
@@ -39,6 +65,7 @@ const getPosts = async () => {
       iconEmojiTwo.setAttribute("src", "./images/laughing.svg");
       iconEmojiThree.setAttribute("src", "./images/happy.svg");
       iconComment.setAttribute("src", "./images/comment.svg");
+      heartUse.setAttribute("href", "./images/sprite.svg#heart");
       imgProfile.setAttribute("src", "./images/user.svg");
       name.textContent = "Anonymous";
     } else {
@@ -48,6 +75,7 @@ const getPosts = async () => {
       iconEmojiTwo.setAttribute("src", "./images/laughing.svg");
       iconEmojiThree.setAttribute("src", "./images/happy.svg");
       iconComment.setAttribute("src", "./images/comment.svg");
+      heartUse.setAttribute("href", "./images/sprite.svg#heart");
       imgProfile.setAttribute("src", "./images/user.svg");
       name.textContent = "Anonymous";
     }
@@ -63,6 +91,8 @@ const getPosts = async () => {
 
     postReactionContainer.append(divOne);
     divOne.append(iconComment);
+    divOne.append(iconHeart);
+    iconHeart.append(heartUse);
     postReactionContainer.append(divTwo);
     divTwo.append(iconEmojiOne);
     divTwo.append(iconEmojiTwo);
