@@ -1,27 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
-/* * {
+.modal {
   font-size: 25px;
   line-height: 1.6;
   font-family: "Roboto", sans-serif;
-} */
+}
 
 #formTitle {
   text-align: center;
   font-family: "Pacifico", cursive;
   text-transform: uppercase;
   font-weight: 400 !important;
-  color: rgb(0, 255, 0);
+  color: white;
   font-size: 1.5rem;
   margin-top: 1rem;
 }
 
 .formContainer {
-  background: white;
+  background: #556427;
   color: white;
   width: 100%;
   max-width: 800px;
-  border-radius: 20px;
 }
 
 #formBody {
@@ -35,6 +34,10 @@
 #gifImg {
   width: 300px;
   height: 300px;
+}
+
+.selected {
+  border: 2px solid red;
 }
 
 textarea {
@@ -52,7 +55,7 @@ textarea {
   font-family: fantasy;
   cursor: pointer;
   letter-spacing: 1px;
-  color: rgba(0, 255, 0, 0.938);
+  color: white;
 }
 
 #postbtn {
@@ -65,7 +68,7 @@ textarea {
   border: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
-  background: rgba(0, 255, 0, 0.938);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 #postbtn:hover {
@@ -76,8 +79,8 @@ textarea {
   border-radius: 20px;
   outline: none;
   border: none;
-  padding: 0.1rem 0.3rem;
-  background: rgba(0, 255, 0, 0.938);
+  padding: 0.3rem 0.5rem;
+  background: rgba(255, 255, 255, 0.25);
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
