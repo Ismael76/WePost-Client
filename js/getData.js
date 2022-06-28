@@ -39,8 +39,14 @@ const getPosts = async () => {
     commentBtn.setAttribute("value", "Comment");
     let gif = document.createElement("img");
     let opened = false;
-    iconComment.addEventListener("click", () => {
+
+    iconComment.addEventListener("click", (e) => {
+      commentContainer.remove();
       if (opened == false) {
+        const comments = Array.from(commentContainer.children);
+        for (let i = 2; i < comments.length; i++) {
+          comments[i].remove();
+        }
         commentContainer.classList.add("commentContainer");
         commentBtn.classList.add("commentBtn");
         commentInput.classList.add("commentInput");
@@ -50,7 +56,7 @@ const getPosts = async () => {
         commentContainer.append(commentBtn);
         commentTitle.textContent = "Comments";
         commentContainer.append(commentTitle);
-        commentBtn.addEventListener("click", () => {
+        commentBtn.addEventListener("click", (e) => {
           const commentInfo = {
             PostID: data[i].PostID,
             Description: commentInput.value,
@@ -76,7 +82,7 @@ const getPosts = async () => {
 
         opened = true;
       } else {
-        postContainer.removeChild(commentContainer);
+        commentContainer.remove();
 
         const comments = Array.from(commentContainer.children);
         for (let i = 2; i < comments.length; i++) {
