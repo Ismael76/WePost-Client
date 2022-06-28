@@ -147,11 +147,11 @@ button {
 }
 
 .box-area {
-  width: 90%;
-  /* background-color: black; */
-  display: flex;
-  min-height: 100vh;
-  padding: 0;
+    width: 90%;
+    /* background-color: black; */
+    display: flex;
+    min-height: calc(100vh - 5rem);
+    padding: 0;
 }
 
 .post-box {
@@ -163,11 +163,14 @@ button {
 }
 
 .post-list {
-  width: 80%;
-  color: #000000;
-  margin: 0 0 0 1rem;
-  border-left: solid 1px grey;
-  border-right: 1px solid grey;
+    width: 80%;
+    height: calc(100vh - 5rem);
+    color: #000000;
+    margin: 0 0 0 1rem;
+    border-left: solid 1px grey;
+    border-right: 1px solid grey;
+    overflow: scroll;
+    box-shadow: inset 0 -15px 10px #000000;
 }
 
 /* styling buttons */
