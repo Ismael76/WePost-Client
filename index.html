@@ -31,6 +31,7 @@
   <script defer src="https://kit.fontawesome.com/7750e1dca2.js" crossorigin="anonymous"></script>
   <script defer src="scripts/nav.js"></script>
   <script defer src="./js/postData.js"></script>
+  <script defer src="./js/comments.js"></script>
 </head>
 
 <body>
@@ -109,7 +110,7 @@
             </div>
           </div>
         </section>
-        <section class="postContainer">
+        <section id = "postbox" class="postContainer">
           <div class="postUserContainer">
             <img src="./images/profile.jpg" alt="">
             <p>Anonymous</p>
@@ -118,7 +119,7 @@
           <img class="gif" src="./images/697b023b-64a5-49a0-8059-27b963453fb1.gif" alt="">
           <div class="postReactionContainer">
             <div>
-              <img class="comment hover" src="./images/comment.svg" alt="">
+              <img id = "com" class="comment hover" src="./images/comment.svg" alt="">
               <svg class="heart hover">
                 <use href="./images/sprite.svg#heart"></use>
               </svg>
