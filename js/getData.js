@@ -9,8 +9,11 @@ const getPosts = async () => {
   const response = await fetch("http://localhost:3500");
   const data = await response.json();
 
+  const sortedData = data.sort((a, b) => b.PostID - a.PostID);
+
   for (let i = 0; i < data.length; i++) {
     let postID = data[i].PostID;
+    console.log(postID);
     let postContainer = document.createElement("section");
     let postReactionContainer = document.createElement("div");
     let postUserContainer = document.createElement("div");
@@ -38,6 +41,7 @@ const getPosts = async () => {
     let commentBtn = document.createElement("input");
 
     commentInput.setAttribute("type", "text");
+    commentInput.setAttribute("maxlength", 100);
     commentBtn.setAttribute("type", "submit");
     commentBtn.setAttribute("value", "Comment");
     commentBtn.setAttribute("id", `${data[i].PostID}`);
@@ -118,9 +122,9 @@ const getPosts = async () => {
 
     if (data[i].URL == null) {
       postDescription.textContent = data[i].Description;
-      iconEmojiOne.setAttribute("src", "./images/confused.svg");
-      iconEmojiTwo.setAttribute("src", "./images/laughing.svg");
-      iconEmojiThree.setAttribute("src", "./images/happy.svg");
+      iconEmojiOne.setAttribute("src", "./images/like.gif");
+      iconEmojiTwo.setAttribute("src", "./images/laugh.gif");
+      iconEmojiThree.setAttribute("src", "./images/smile.gif");
       iconComment.setAttribute("src", "./images/comment.svg");
       iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
@@ -129,12 +133,13 @@ const getPosts = async () => {
       emojiOneNum.textContent = 0;
       emojiThreeNum.textContent = 0;
       emojiTwoNum.textContent = 0;
+      time.textContent = data[i].Time;
     } else {
       gif.setAttribute("src", data[i].URL);
       postDescription.textContent = data[i].Description;
-      iconEmojiOne.setAttribute("src", "./images/confused.svg");
-      iconEmojiTwo.setAttribute("src", "./images/laughing.svg");
-      iconEmojiThree.setAttribute("src", "./images/happy.svg");
+      iconEmojiOne.setAttribute("src", "./images/like.gif");
+      iconEmojiTwo.setAttribute("src", "./images/laugh.gif");
+      iconEmojiThree.setAttribute("src", "./images/smile.gif");
       iconComment.setAttribute("src", "./images/comment.svg");
       iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
@@ -143,6 +148,7 @@ const getPosts = async () => {
       emojiOneNum.textContent = 0;
       emojiThreeNum.textContent = 0;
       emojiTwoNum.textContent = 0;
+      time.textContent = data[i].Time;
     }
 
     postList.append(postContainer);
@@ -176,19 +182,20 @@ const getComments = async (id) => {
       let singleCommentContainer = document.createElement("div");
       let comment = document.createElement("p");
       let imgProfile = document.createElement("img");
+      let commentTime = document.createElement("p");
 
+      commentTime.classList.add("postTime");
       singleCommentContainer.classList.add("singleCommentContainer");
       comment.classList.add("comments");
 
       comment.textContent = commentData[i].Description;
       imgProfile.setAttribute("src", "./images/user.svg");
+      commentTime.textContent = commentData[i].Time;
 
       commentContainer.append(singleCommentContainer);
       singleCommentContainer.append(imgProfile);
       singleCommentContainer.append(comment);
-
-      // commentContainer.append(comments);
-      // comments.append(comment);
+      singleCommentContainer.append(commentTime);
     }
   }
 };
