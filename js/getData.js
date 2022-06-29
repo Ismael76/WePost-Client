@@ -129,6 +129,7 @@ const getPosts = async () => {
       emojiOneNum.textContent = 0;
       emojiThreeNum.textContent = 0;
       emojiTwoNum.textContent = 0;
+      time.textContent = data[i].Time;
     } else {
       gif.setAttribute("src", data[i].URL);
       postDescription.textContent = data[i].Description;
@@ -143,6 +144,7 @@ const getPosts = async () => {
       emojiOneNum.textContent = 0;
       emojiThreeNum.textContent = 0;
       emojiTwoNum.textContent = 0;
+      time.textContent = data[i].Time;
     }
 
     postList.append(postContainer);
