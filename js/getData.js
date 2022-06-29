@@ -27,7 +27,7 @@ const getPosts = async () => {
 
     let heartNum = document.createElement("span");
     let iconHeart = document.createElement("img");
-    iconHeart.setAttribute('id', `${data[i].PostID}-h`);
+    iconHeart.setAttribute("id", `${data[i].PostID}-h`);
 
     let iconEmojiOne = document.createElement("img");
     let emojiOneNum = document.createElement("span");
@@ -111,32 +111,33 @@ const getPosts = async () => {
 
     // adding class to the like buttons
 
-    iconHeart.addEventListener('click', (e) => {
+    iconHeart.addEventListener("click", (e) => {
       //Updates the number from just the front end
-        let heartCount = parseInt(heartNum.textContent);
-        heartCount++;
-        heartNum.textContent = heartCount;
-        // console.log(typeof heartCount)
+      let heartCount = parseInt(heartNum.textContent);
+      heartCount++;
+      heartNum.textContent = heartCount;
+      // console.log(typeof heartCount)
 
       let identify = e.target.id;
-      let check = parseInt(identify.replace('-h', ''));
+      let check = parseInt(identify.replace("-h", ""));
 
       if (check === data[i].PostID) {
         fetch(`http://localhost:3500/${data[i].PostID}`, {
-          method: 'PATCH',
+          method: "PATCH",
           body: JSON.stringify({
             Likes: heartCount,
           }),
           headers: {
-            'Content-type': 'application/json',
+            "Content-type": "application/json",
           },
         })
-        .then((r) => r.json())
-        .catch((err) => {
-          console.log("Oh No!");
-        });
+          .then((r) => r.json())
+          .catch((err) => {
+            console.log("Oh No!");
+          });
       }
-    })
+      // location.reload();
+    });
 
     /////////////////////////////////////////////////////////////////
 
@@ -162,7 +163,8 @@ const getPosts = async () => {
       iconComment.setAttribute("src", "./images/comment.svg");
       iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
-      heartNum.textContent = 0;
+      heartNum.textContent = data[i].Likes;
+      // heartNum.textContent = 0;
       name.textContent = "Anonymous";
       emojiOneNum.textContent = 0;
       emojiThreeNum.textContent = 0;
@@ -177,7 +179,8 @@ const getPosts = async () => {
       iconComment.setAttribute("src", "./images/comment.svg");
       iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
-      heartNum.textContent = 0;
+      heartNum.textContent = data[i].Likes;
+      // heartNum.textContent = 0;
       name.textContent = "Anonymous";
       emojiOneNum.textContent = 0;
       emojiThreeNum.textContent = 0;
