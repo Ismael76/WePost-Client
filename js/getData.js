@@ -27,15 +27,19 @@ const getPosts = async () => {
 
     let heartNum = document.createElement("span");
     let iconHeart = document.createElement("img");
+    iconHeart.setAttribute("id", `${data[i].PostID}-h`);
 
     let iconEmojiOne = document.createElement("img");
     let emojiOneNum = document.createElement("span");
+    iconEmojiOne.setAttribute("id", `${data[i].PostID}-t`);
 
     let iconEmojiTwo = document.createElement("img");
     let emojiTwoNum = document.createElement("span");
+    iconEmojiTwo.setAttribute("id", `${data[i].PostID}-l`);
 
     let iconEmojiThree = document.createElement("img");
     let emojiThreeNum = document.createElement("span");
+    iconEmojiThree.setAttribute("id", `${data[i].PostID}-s`);
 
     let commentInput = document.createElement("input");
     let commentBtn = document.createElement("input");
@@ -106,6 +110,128 @@ const getPosts = async () => {
       }
     });
 
+    // Reece working on the liking //////////////////////////////////
+
+    // adding class to the like buttons
+
+    iconHeart.addEventListener("click", (e) => {
+      //Updates the number from just the front end
+      let heartCount = parseInt(heartNum.textContent);
+      heartCount++;
+      heartNum.textContent = heartCount;
+      // console.log(heartCount)
+
+      let identify = e.target.id;
+      let check = parseInt(identify.replace("-h", ""));
+
+      if (check === data[i].PostID) {
+        fetch(`http://localhost:3500/${data[i].PostID}`, {
+          method: "PATCH",
+          body: JSON.stringify({
+            Likes: heartCount,
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+          .then((r) => r.json())
+          .catch((err) => {
+            console.log("Oh No!");
+          });
+      }
+      // location.reload();
+    });
+
+    ////////////////emojisons/////////////////////////////
+
+    iconEmojiOne.addEventListener("click", (e) => {
+      //Updates the number from just the front end
+      let emojiCount = parseInt(emojiOneNum.textContent);
+      emojiCount++;
+      emojiOneNum.textContent = emojiCount;
+      // console.log(typeof heartCount)
+
+      let identify = e.target.id;
+      let check = parseInt(identify.replace("-t", ""));
+
+      if (check === data[i].PostID) {
+        fetch(`http://localhost:3500/emoji1/${data[i].PostID}`, {
+          method: "PATCH",
+          body: JSON.stringify({
+            EmojiOne: emojiCount,
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+          .then((r) => r.json())
+          .catch((err) => {
+            console.log("Oh No!");
+          });
+      }
+      // location.reload();
+    });
+
+    //////////////////////Emojitwo/////////////////////////////
+
+    iconEmojiTwo.addEventListener("click", (e) => {
+      //Updates the number from just the front end
+      let emojiCount = parseInt(emojiTwoNum.textContent);
+      emojiCount++;
+      emojiTwoNum.textContent = emojiCount;
+      // console.log(typeof heartCount)
+
+      let identify = e.target.id;
+      let check = parseInt(identify.replace("-l", ""));
+
+      if (check === data[i].PostID) {
+        fetch(`http://localhost:3500/emoji2/${data[i].PostID}`, {
+          method: "PATCH",
+          body: JSON.stringify({
+            EmojiTwo: emojiCount,
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+          .then((r) => r.json())
+          .catch((err) => {
+            console.log("Oh No!");
+          });
+      }
+      // location.reload();
+    });
+
+    //////////////////////Emojithree/////////////////////////////
+
+    iconEmojiThree.addEventListener("click", (e) => {
+      //Updates the number from just the front end
+      let emojiCount = parseInt(emojiThreeNum.textContent);
+      emojiCount++;
+      emojiThreeNum.textContent = emojiCount;
+      // console.log(typeof heartCount)
+
+      let identify = e.target.id;
+      let check = parseInt(identify.replace("-s", ""));
+
+      if (check === data[i].PostID) {
+        fetch(`http://localhost:3500/emoji3/${data[i].PostID}`, {
+          method: "PATCH",
+          body: JSON.stringify({
+            EmojiThree: emojiCount,
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+          .then((r) => r.json())
+          .catch((err) => {
+            console.log("Oh No!");
+          });
+      }
+      // location.reload();
+    });
+
     postContainer.classList.add("postContainer");
     postReactionContainer.classList.add("postReactionContainer");
     postUserContainer.classList.add("postUserContainer");
@@ -128,11 +254,11 @@ const getPosts = async () => {
       iconComment.setAttribute("src", "./images/comment.svg");
       iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
-      heartNum.textContent = 0;
+      heartNum.textContent = data[i].Likes;
       name.textContent = "Anonymous";
-      emojiOneNum.textContent = 0;
-      emojiThreeNum.textContent = 0;
-      emojiTwoNum.textContent = 0;
+      emojiOneNum.textContent = data[i].EmojiOne;
+      emojiThreeNum.textContent = data[i].EmojiThree;
+      emojiTwoNum.textContent = data[i].EmojiTwo;
       time.textContent = data[i].Time;
     } else {
       gif.setAttribute("src", data[i].URL);
@@ -143,7 +269,8 @@ const getPosts = async () => {
       iconComment.setAttribute("src", "./images/comment.svg");
       iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
-      heartNum.textContent = 0;
+      heartNum.textContent = data[i].Likes;
+      // heartNum.textContent = 0;
       name.textContent = "Anonymous";
       emojiOneNum.textContent = 0;
       emojiThreeNum.textContent = 0;
