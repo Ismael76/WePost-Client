@@ -189,6 +189,7 @@ const getComments = async (id) => {
 
       comment.textContent = commentData[i].Description;
       imgProfile.setAttribute("src", "./images/user.svg");
+      commentTime.textContent = commentData[i].Time;
 
       commentContainer.append(singleCommentContainer);
       singleCommentContainer.append(imgProfile);
