@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 .postContainer {
-  /* max-width: 700px; */
+  word-wrap: break-word;
   border-bottom: 1px solid gray;
   background-color: lightgray;
   padding: 1rem;

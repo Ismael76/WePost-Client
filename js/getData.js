@@ -41,6 +41,7 @@ const getPosts = async () => {
     let commentBtn = document.createElement("input");
 
     commentInput.setAttribute("type", "text");
+    commentInput.setAttribute("maxlength", 100);
     commentBtn.setAttribute("type", "submit");
     commentBtn.setAttribute("value", "Comment");
     commentBtn.setAttribute("id", `${data[i].PostID}`);
@@ -121,9 +122,9 @@ const getPosts = async () => {
 
     if (data[i].URL == null) {
       postDescription.textContent = data[i].Description;
-      iconEmojiOne.setAttribute("src", "./images/confused.svg");
-      iconEmojiTwo.setAttribute("src", "./images/laughing.svg");
-      iconEmojiThree.setAttribute("src", "./images/happy.svg");
+      iconEmojiOne.setAttribute("src", "./images/like.gif");
+      iconEmojiTwo.setAttribute("src", "./images/laugh.gif");
+      iconEmojiThree.setAttribute("src", "./images/smile.gif");
       iconComment.setAttribute("src", "./images/comment.svg");
       iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
@@ -136,9 +137,9 @@ const getPosts = async () => {
     } else {
       gif.setAttribute("src", data[i].URL);
       postDescription.textContent = data[i].Description;
-      iconEmojiOne.setAttribute("src", "./images/confused.svg");
-      iconEmojiTwo.setAttribute("src", "./images/laughing.svg");
-      iconEmojiThree.setAttribute("src", "./images/happy.svg");
+      iconEmojiOne.setAttribute("src", "./images/like.gif");
+      iconEmojiTwo.setAttribute("src", "./images/laugh.gif");
+      iconEmojiThree.setAttribute("src", "./images/smile.gif");
       iconComment.setAttribute("src", "./images/comment.svg");
       iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
@@ -195,9 +196,6 @@ const getComments = async (id) => {
       singleCommentContainer.append(imgProfile);
       singleCommentContainer.append(comment);
       singleCommentContainer.append(commentTime);
-
-      // commentContainer.append(comments);
-      // comments.append(comment);
     }
   }
 };
