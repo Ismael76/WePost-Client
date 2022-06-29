@@ -1,16 +1,16 @@
 const postList = document.querySelector(".post-list");
 
-let commentInput = document.createElement("input");
-let commentBtn = document.createElement("input");
 let commentContainer = document.createElement("div");
 let comments = document.createElement("div");
 let commentTitle = document.createElement("h1");
+let commentForm = document.createElement("form");
 
 const getPosts = async () => {
   const response = await fetch("http://localhost:3500");
   const data = await response.json();
 
   for (let i = 0; i < data.length; i++) {
+    let postID = data[i].PostID;
     let postContainer = document.createElement("section");
     let postReactionContainer = document.createElement("div");
     let postUserContainer = document.createElement("div");
@@ -34,31 +34,45 @@ const getPosts = async () => {
     let iconEmojiThree = document.createElement("img");
     let emojiThreeNum = document.createElement("span");
 
+    let commentInput = document.createElement("input");
+    let commentBtn = document.createElement("input");
+
     commentInput.setAttribute("type", "text");
     commentBtn.setAttribute("type", "submit");
     commentBtn.setAttribute("value", "Comment");
+    commentBtn.setAttribute("id", `${data[i].PostID}`);
     let gif = document.createElement("img");
     let opened = false;
 
     iconComment.addEventListener("click", (e) => {
       commentContainer.remove();
+      commentBtn.remove();
+      commentInput.remove();
       if (opened == false) {
         const comments = Array.from(commentContainer.children);
-        for (let i = 2; i < comments.length; i++) {
+        const formChildren = Array.from(commentForm.children);
+
+        for (let i = 0; i < formChildren.length; i++) {
+          formChildren[i].remove();
+        }
+
+        for (let i = 1; i < comments.length; i++) {
           comments[i].remove();
         }
+
         commentContainer.classList.add("commentContainer");
         commentBtn.classList.add("commentBtn");
         commentInput.classList.add("commentInput");
         commentTitle.classList.add("commentTitle");
         postContainer.append(commentContainer);
-        commentContainer.append(commentInput);
-        commentContainer.append(commentBtn);
+        commentContainer.append(commentForm);
+        commentForm.append(commentInput);
+        commentForm.append(commentBtn);
         commentTitle.textContent = "Comments";
-        commentContainer.append(commentTitle);
+        commentForm.append(commentTitle);
         commentBtn.addEventListener("click", (e) => {
           const commentInfo = {
-            PostID: data[i].PostID,
+            PostID: postID,
             Description: commentInput.value,
           };
 
@@ -75,17 +89,13 @@ const getPosts = async () => {
             .catch((err) => {
               console.log("Oh No!");
             });
-          location.reload();
         });
-
         getComments(data[i].PostID);
-
         opened = true;
       } else {
         commentContainer.remove();
-
         const comments = Array.from(commentContainer.children);
-        for (let i = 2; i < comments.length; i++) {
+        for (let i = 1; i < comments.length; i++) {
           comments[i].remove();
         }
         opened = false;
