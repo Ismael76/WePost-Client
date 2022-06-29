@@ -24,6 +24,7 @@ const getPosts = async () => {
 
     let heartNum = document.createElement("span");
     let iconHeart = document.createElement("img");
+    iconHeart.setAttribute('id', `${data[i].PostID}-h`);
 
     let iconEmojiOne = document.createElement("img");
     let emojiOneNum = document.createElement("span");
@@ -91,6 +92,39 @@ const getPosts = async () => {
         opened = false;
       }
     });
+
+    // Reece working on the liking //////////////////////////////////
+
+    // adding class to the like buttons
+
+    iconHeart.addEventListener('click', (e) => {
+      //Updates the number from just the front end
+        let heartCount = parseInt(heartNum.textContent);
+        heartCount++;
+        heartNum.textContent = heartCount;
+        // console.log(typeof heartCount)
+
+      let identify = e.target.id;
+      let check = parseInt(identify.replace('-h', ''));
+
+      if (check === data[i].PostID) {
+        fetch(`http://localhost:3500/${data[i].PostID}`, {
+          method: 'PATCH',
+          body: JSON.stringify({
+            Likes: heartCount,
+          }),
+          headers: {
+            'Content-type': 'application/json',
+          },
+        })
+        .then((r) => r.json())
+        .catch((err) => {
+          console.log("Oh No!");
+        });
+      }
+    })
+
+    /////////////////////////////////////////////////////////////////
 
     postContainer.classList.add("postContainer");
     postReactionContainer.classList.add("postReactionContainer");
