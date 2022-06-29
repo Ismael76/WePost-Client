@@ -9,8 +9,11 @@ const getPosts = async () => {
   const response = await fetch("http://localhost:3500");
   const data = await response.json();
 
-  for (let i = 0; i < data.length; i++) {
+  const sortedData = data.sort((a, b) => b.PostID - a.PostID);
+
+  for (let i = 0; i < sortedData.length; i++) {
     let postID = data[i].PostID;
+    console.log(postID);
     let postContainer = document.createElement("section");
     let postReactionContainer = document.createElement("div");
     let postUserContainer = document.createElement("div");
@@ -178,7 +181,9 @@ const getComments = async (id) => {
       let singleCommentContainer = document.createElement("div");
       let comment = document.createElement("p");
       let imgProfile = document.createElement("img");
+      let commentTime = document.createElement("p");
 
+      commentTime.classList.add("postTime");
       singleCommentContainer.classList.add("singleCommentContainer");
       comment.classList.add("comments");
 
@@ -188,6 +193,7 @@ const getComments = async (id) => {
       commentContainer.append(singleCommentContainer);
       singleCommentContainer.append(imgProfile);
       singleCommentContainer.append(comment);
+      singleCommentContainer.append(commentTime);
 
       // commentContainer.append(comments);
       // comments.append(comment);
