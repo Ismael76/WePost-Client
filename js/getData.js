@@ -164,7 +164,7 @@ const getPosts = async () => {
       iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
       heartNum.textContent = data[i].Likes;
-      // heartNum.textContent = 0;
+
       name.textContent = "Anonymous";
       emojiOneNum.textContent = 0;
       emojiThreeNum.textContent = 0;
@@ -180,7 +180,7 @@ const getPosts = async () => {
       iconHeart.setAttribute("src", "./images/heart.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
       heartNum.textContent = data[i].Likes;
-      // heartNum.textContent = 0;
+
       name.textContent = "Anonymous";
       emojiOneNum.textContent = 0;
       emojiThreeNum.textContent = 0;
