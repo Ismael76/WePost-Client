@@ -11,7 +11,7 @@ const getPosts = async () => {
 
   const sortedData = data.sort((a, b) => b.PostID - a.PostID);
 
-  for (let i = 0; i < sortedData.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     let postID = data[i].PostID;
     console.log(postID);
     let postContainer = document.createElement("section");
