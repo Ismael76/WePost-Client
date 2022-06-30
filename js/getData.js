@@ -273,9 +273,9 @@ const getPosts = async () => {
       heartNum.textContent = data[i].Likes;
 
       name.textContent = "Anonymous";
-      emojiOneNum.textContent = 0;
-      emojiThreeNum.textContent = 0;
-      emojiTwoNum.textContent = 0;
+      emojiOneNum.textContent = data[i].EmojiOne;
+      emojiThreeNum.textContent = data[i].EmojiThree;
+      emojiTwoNum.textContent = data[i].EmojiTwo;
       time.textContent = data[i].Time;
     }
 
@@ -329,3 +329,5 @@ const getComments = async (id) => {
 };
 
 getPosts();
+
+module.exports = getPosts;
