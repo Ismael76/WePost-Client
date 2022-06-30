@@ -279,7 +279,7 @@ const getPosts = async () => {
       iconEmojiTwo.setAttribute("src", "./images/laugh.gif");
       iconEmojiThree.setAttribute("src", "./images/smile.gif");
       iconComment.setAttribute("src", "./images/comment.svg");
-      iconHeart.setAttribute("src", "./images/heart.svg");
+      iconHeart.setAttribute("src", "./images/heart1.svg");
       imgProfile.setAttribute("src", "./images/user.svg");
       heartNum.textContent = data[i].Likes;
 
