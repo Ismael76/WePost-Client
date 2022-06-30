@@ -1,4 +1,5 @@
 # WePost-Client
+![responsivity](./images/responsive.png)
 
 To access the live version of the website please use this following link: https://we-post.netlify.app/?
 
