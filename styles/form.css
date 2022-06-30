@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Roboto&family=Rubik+Moonrocks&display=swap');
+
+.modal {
+  font-size: 25px;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+}
+
+.modal-content {
+  border-radius: 15px;
+  border-style: none;
+}
+
+.modal-body {
+  font-family: 'Electrolize', sans-serif;}
+
+#formTitle {
+  text-align: center;
+  font-family: 'Rubik Moonrocks', cursive;
+  text-transform: uppercase;
+  font-weight: 400 !important;
+  color: #556427;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.formContainer {
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: solid 2px #556427;
+  color: white;
+  width: 100%;
+  max-width: 800px;
+}
+
+#formBody {
+  font-family: inherit;
+  font-size: inherit;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+#gifImg {
+  width: 300px;
+  height: 300px;
+}
+
+.selected {
+  border: 2px solid red;
+}
+
+textarea {
+  resize: none;
+  margin: auto;
+  padding: 0.1rem 0.5rem;
+}
+
+#text {
+  width: 98%;
+}
+
+#GIF {
+  margin-left: 10px;
+  font-family: fantasy;
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: white;
+}
+
+#postbtn {
+  border-radius: 15px;
+  width: 30%;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 1rem;
+  outline: none;
+  border: solid 1px #ffffff;
+  font-family: 'Electrolize', sans-serif;
+  color: #ffffff;
+  background: #556427;
+}
+
+#postbtn:hover {
+  background-color: #ffffff;
+  color: #556427;
+  border: solid 1px #556427;
+}
+
+#btnSearch {
+  border-radius: 15px;
+  outline: none;
+  border: solid 1px #ffffff;
+  padding: 0.3rem 0.5rem;
+  background: #556427;
+  color: white;
+  font-family: 'Electrolize', sans-serif;
+}
+
+#btnSearch:hover {
+  background-color: #ffffff;
+  color: #556427;
+  border: solid 1px #556427;
+}
+
+#search {
+  padding: 0.2rem 0.5rem;
+  width: 70%;
+}
+
+.out {
+  max-width: 800px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  display: flex;
+}
+
+.gifContainer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+figure {
+  margin: 0.2rem;
+}
