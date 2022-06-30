@@ -160,6 +160,7 @@ button {
   width: 100%;
   display: flex;
   justify-content: center;
+  background: linear-gradient(to right, #ffffff , #ffffff);
 }
 
 .box-area {
@@ -223,6 +224,7 @@ button {
   background-color: grey;
 }
 
+
 #postbtn {
   padding: 0.3rem 0.5rem;
 }
@@ -276,6 +278,48 @@ button {
 
 }
 
+
+@media only screen and (max-width: 637px) {
+  #color-1, #color-2 {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  
+  .menu li .icons {
+    display: inline-block;
+    padding: 1rem 0;
+    font-size: 1rem;
+}
+
+  .btn-green {
+    width: 1.5rem;
+    height:1rem;
+    font-size: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .post-box, .post-box-r {
+    width: 3rem;
+    height: 30rem;
+  }
+
+  div > img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  div > span {
+    font-size: 0.8rem;
+  }
+
+  .menu a.show-anchor {
+    font-size: 0.5rem;
+  }
+
+}
+
 @media only screen and (max-width: 540px) {
   .main {
     width: 100%;
@@ -311,6 +355,7 @@ button {
     flex-direction: row;
   }
 
+
   .f-list {
     padding-left: 0;
     padding-right: 10rem;
@@ -331,6 +376,7 @@ button {
     margin: 0;
     font-size: 0.8rem;
   }
+
 
   #search {
     font-size: 0.8rem;
@@ -365,9 +411,11 @@ button {
     height: 1.5rem;
   }
 
+
 }
 
-#darkMode {
-  background-color: #000000;
-  color: #ffffff;
-}
+// #darkMode {
+  // background-color: #000000;
+  // color: #ffffff;
+
+// }

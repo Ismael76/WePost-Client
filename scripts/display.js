@@ -1,8 +1,10 @@
 var css = document.getElementById("color");
 var color1 = document.getElementById("color-1");
 var color2 = document.getElementById("color-2");
+
 var body = document.getElementsByTagName('header')[0];
 let toggle = document.getElementById('light');
+
 
 function setGradient() {
     console.log(body);
@@ -14,6 +16,7 @@ function setGradient() {
 	 + ")";
 css.textContent = body.style.background + ";";
 }
+
 
 // const toggleDarkMode = () => {
 //     let section = document.getElementsByClassName('main')[0];
@@ -43,3 +46,8 @@ css.textContent = body.style.background + ";";
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
 // toggle.addEventListener('click', toggleDarkMode);
+
+color1.addEventListener("input", setGradient);
+
+color2.addEventListener("input", setGradient);
+

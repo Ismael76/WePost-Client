@@ -161,12 +161,14 @@ img {
   margin: auto;
 }
 
+
 .emojiCounter {
   margin-right: 1.5rem;
 }
 
+
 @media only screen and (max-width: 637px) {
-  .postUserContainer p {
+  .postUserContainer p{
     font-size: 0.8rem;
   }
 
