@@ -38,7 +38,7 @@ css.textContent = body.style.background + ";";
     // cContainer.style.color = '#ffffff';
     // comment.style.color = '#ffffff';
     // section.setAttribute('id', 'darkMode');
-}
+// }
 
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
