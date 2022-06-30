@@ -337,4 +337,6 @@ const getComments = async (id) => {
   location.reload();
 };
 
-getPosts();
+setInterval(() => {
+  getPosts;
+}, 1000);
