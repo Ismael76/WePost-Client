@@ -1,0 +1,26 @@
+{
+  "name": "wepost-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --env=jsdom",
+    "coverage": "jest --coverage --env=jsdom --maxWorkers 2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ismael76/WePost-Client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ismael76/WePost-Client/issues"
+  },
+  "homepage": "https://github.com/Ismael76/WePost-Client#readme",
+  "devDependencies": {
+    "jest": "^28.1.2",
+    "jest-environment-jsdom": "^28.1.2",
+    "jest-fetch-mock": "^3.0.3"
+  }
+}

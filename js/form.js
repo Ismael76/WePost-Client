@@ -29,15 +29,17 @@ function init() {
           console.error(err);
         });
     }
-    let selected = true;
+
+    let selectedGif;
     document.addEventListener("click", (e) => {
       if (e.target.matches("img")) {
-        if (selected) {
+        if (selectedGif) {
+          selectedGif.classList.remove("selected");
+          selectedGif = e.target;
           e.target.classList.add("selected");
-          selected = false;
         } else {
-          e.target.classList.remove("selected");
-          selected = true;
+          selectedGif = e.target;
+          e.target.classList.add("selected");
         }
       }
     });

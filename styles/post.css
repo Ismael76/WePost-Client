@@ -8,7 +8,7 @@
   margin: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 10px;
   box-shadow: #000000 5px 0px 9px 0px;
-  font-family: 'Electrolize', sans-serif;
+  font-family: "Electrolize", sans-serif;
 }
 
 .postUserContainer {
@@ -21,7 +21,6 @@
   font-weight: 700;
   margin-left: 1rem;
   margin-bottom: 0;
-  
 }
 
 .postTime {
@@ -61,7 +60,6 @@ img {
 }
 
 .emoji {
-  margin-right: 1.5rem;
   fill: wheat;
 }
 
@@ -78,28 +76,42 @@ img {
   margin-top: 1rem;
 }
 
+#c-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #ffffff; */
+  border-radius: 15px 15px 0 0;
+}
+
 .commentBtn {
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
   margin: 0 0.5rem;
+  width: 5rem;
+  height: 2rem;
   outline: none;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: solid 1px #bac697;
+  font-family: "Electrolize", sans-serif;
+  font-size: 0.8rem;
   color: white;
-  background: gray;
+  background-color: #556427;
 }
 
 .commentBtn:hover {
-  background-color: rgba(3, 112, 3, 0.938);
+  background-color: #ffffff;
+  color: #556427;
+  border: solid 1px #556427;
 }
 
 .commentInput {
-  width: 90%;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  border: none;
-  margin-bottom: 2rem;
+  width: 80%;
+  /* padding: 0.5rem 10rem; */
+  border-radius: 15px;
+  border: solid 1px #556427;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 
 .commentContainer {
@@ -108,13 +120,19 @@ img {
   padding-bottom: 1rem;
   max-height: 200px;
   overflow: auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px 3px;
 }
 
 .commentTitle {
-  font-family: "Pacifico", cursive;
+  font-family: "Electrolize", sans-serif;
   text-align: center;
   color: #556427;
   letter-spacing: 1px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .singleCommentContainer {
@@ -127,12 +145,27 @@ img {
 .singleCommentContainer p {
   font-weight: 700;
   margin-left: 1rem;
+  max-width: 35%;
+  font-size: 0.7rem;
+  font-family: "Electrolize", sans-serif;
+  margin-bottom: 5px;
+}
+
+.singleCommentContainer > .postTime {
+  width: 30%;
+  font-size: 0.6rem;
 }
 
 .comments {
   color: black;
   margin: auto;
 }
+
+
+.emojiCounter {
+  margin-right: 1.5rem;
+}
+
 
 @media only screen and (max-width: 637px) {
   .postUserContainer p{
@@ -143,4 +176,3 @@ img {
     font-size: 0.7rem;
   }
 }
-
