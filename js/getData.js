@@ -73,6 +73,11 @@ const getPosts = async () => {
         commentInput.classList.add("commentInput");
         commentTitle.classList.add("commentTitle");
         postContainer.append(commentContainer);
+
+        // Not sure where to put this
+        commentForm.setAttribute('id', 'c-form')
+        /////////////////////////////
+
         commentContainer.append(commentForm);
         commentForm.append(commentInput);
         commentForm.append(commentBtn);
