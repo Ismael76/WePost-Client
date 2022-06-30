@@ -325,6 +325,14 @@ button {
     width: 100%;
   }
 
+  .singleCommentContainer p {
+    font-size: 0.7rem;
+  }
+
+  .singleCommentContainer > .postTime {
+    font-size: 0.6rem;
+  }
+
   .box-area{
     width: 100%;
     flex-direction: column;
@@ -414,8 +422,8 @@ button {
 
 }
 
-// #darkMode {
-  // background-color: #000000;
-  // color: #ffffff;
+ /* #darkMode {
+   background-color: #000000;
+   color: #ffffff;
 
-// }
+ } */
