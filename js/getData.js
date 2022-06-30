@@ -338,5 +338,5 @@ const getComments = async (id) => {
 };
 
 setInterval(() => {
-  getPosts;
+  getPosts();
 }, 1000);
