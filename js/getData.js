@@ -308,6 +308,7 @@ const getPosts = async () => {
     divTwo.append(iconEmojiThree);
     divTwo.append(emojiThreeNum);
   }
+  location.reload();
 };
 
 const getComments = async (id) => {
