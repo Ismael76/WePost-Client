@@ -29,7 +29,7 @@ function init() {
           console.error(err);
         });
     }
-    // let selected = true;
+
     let selectedGif;
     document.addEventListener("click", (e) => {
       if (e.target.matches("img")) {
@@ -45,5 +45,3 @@ function init() {
     });
   });
 }
-
-module.exports = { init };

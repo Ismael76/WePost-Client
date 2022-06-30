@@ -6,7 +6,7 @@ let commentTitle = document.createElement("h1");
 let commentForm = document.createElement("form");
 
 const getPosts = async () => {
-  const response = await fetch("http://localhost:3500");
+  const response = await fetch("https://rum-wepost.herokuapp.com/");
   const data = await response.json();
 
   const sortedData = data.sort((a, b) => b.PostID - a.PostID);
@@ -75,7 +75,7 @@ const getPosts = async () => {
         postContainer.append(commentContainer);
 
         // Not sure where to put this
-        commentForm.setAttribute('id', 'c-form')
+        commentForm.setAttribute("id", "c-form");
         /////////////////////////////
 
         commentContainer.append(commentForm);
@@ -97,7 +97,7 @@ const getPosts = async () => {
             },
           };
 
-          fetch("http://localhost:3500/comments", options)
+          fetch("https://rum-wepost.herokuapp.com/comments", options)
             .then((r) => r.json())
             .catch((err) => {
               console.log("Oh No!");
@@ -130,7 +130,7 @@ const getPosts = async () => {
       let check = parseInt(identify.replace("-h", ""));
 
       if (check === data[i].PostID) {
-        fetch(`http://localhost:3500/${data[i].PostID}`, {
+        fetch(`https://rum-wepost.herokuapp.com/${data[i].PostID}`, {
           method: "PATCH",
           body: JSON.stringify({
             Likes: heartCount,
@@ -160,7 +160,7 @@ const getPosts = async () => {
       let check = parseInt(identify.replace("-t", ""));
 
       if (check === data[i].PostID) {
-        fetch(`http://localhost:3500/emoji1/${data[i].PostID}`, {
+        fetch(`https://rum-wepost.herokuapp.com/emoji1/${data[i].PostID}`, {
           method: "PATCH",
           body: JSON.stringify({
             EmojiOne: emojiCount,
@@ -190,7 +190,7 @@ const getPosts = async () => {
       let check = parseInt(identify.replace("-l", ""));
 
       if (check === data[i].PostID) {
-        fetch(`http://localhost:3500/emoji2/${data[i].PostID}`, {
+        fetch(`https://rum-wepost.herokuapp.com/emoji2/${data[i].PostID}`, {
           method: "PATCH",
           body: JSON.stringify({
             EmojiTwo: emojiCount,
@@ -220,7 +220,7 @@ const getPosts = async () => {
       let check = parseInt(identify.replace("-s", ""));
 
       if (check === data[i].PostID) {
-        fetch(`http://localhost:3500/emoji3/${data[i].PostID}`, {
+        fetch(`https://rum-wepost.herokuapp.com/emoji3/${data[i].PostID}`, {
           method: "PATCH",
           body: JSON.stringify({
             EmojiThree: emojiCount,
@@ -250,6 +250,9 @@ const getPosts = async () => {
     iconEmojiThree.classList.add("emoji", "hover");
     gif.classList.add("gif");
     iconHeart.classList.add("heart", "hover");
+    emojiOneNum.classList.add("emojiCounter");
+    emojiTwoNum.classList.add("emojiCounter");
+    emojiThreeNum.classList.add("emojiCounter");
 
     if (data[i].URL == null) {
       postDescription.textContent = data[i].Description;
@@ -295,20 +298,20 @@ const getPosts = async () => {
 
     postReactionContainer.append(divOne);
     divOne.append(iconComment);
-    divOne.append(heartNum);
     divOne.append(iconHeart);
+    divOne.append(heartNum);
     postReactionContainer.append(divTwo);
-    divTwo.append(emojiOneNum);
     divTwo.append(iconEmojiOne);
-    divTwo.append(emojiTwoNum);
+    divTwo.append(emojiOneNum);
     divTwo.append(iconEmojiTwo);
-    divTwo.append(emojiThreeNum);
+    divTwo.append(emojiTwoNum);
     divTwo.append(iconEmojiThree);
+    divTwo.append(emojiThreeNum);
   }
 };
 
 const getComments = async (id) => {
-  const response = await fetch("http://localhost:3500/comments");
+  const response = await fetch("https://rum-wepost.herokuapp.com/comments");
   const commentData = await response.json();
   for (let i = 0; i < commentData.length; i++) {
     if (commentData[i].PostID === id) {
@@ -334,5 +337,3 @@ const getComments = async (id) => {
 };
 
 getPosts();
-
-module.exports = getPosts;

@@ -27,7 +27,7 @@ const addPost = (e) => {
     },
   };
 
-  fetch("http://localhost:3500", options)
+  fetch("https://rum-wepost.herokuapp.com/", options)
     .then((r) => {
       r.json();
     })

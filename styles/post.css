@@ -8,7 +8,7 @@
   margin: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 10px;
   box-shadow: #000000 5px 0px 9px 0px;
-  font-family: 'Electrolize', sans-serif;
+  font-family: "Electrolize", sans-serif;
 }
 
 .postUserContainer {
@@ -21,7 +21,6 @@
   font-weight: 700;
   margin-left: 1rem;
   margin-bottom: 0;
-  
 }
 
 .postTime {
@@ -61,7 +60,6 @@ img {
 }
 
 .emoji {
-  margin-right: 1.5rem;
   fill: wheat;
 }
 
@@ -95,7 +93,7 @@ img {
   height: 2rem;
   outline: none;
   border: solid 1px #bac697;
-  font-family: 'Electrolize', sans-serif;
+  font-family: "Electrolize", sans-serif;
   font-size: 0.8rem;
   color: white;
   background-color: #556427;
@@ -128,7 +126,7 @@ img {
 }
 
 .commentTitle {
-  font-family: 'Electrolize', sans-serif;
+  font-family: "Electrolize", sans-serif;
   text-align: center;
   color: #556427;
   letter-spacing: 1px;
@@ -149,7 +147,7 @@ img {
   margin-left: 1rem;
   max-width: 35%;
   font-size: 0.7rem;
-  font-family: 'Electrolize', sans-serif;
+  font-family: "Electrolize", sans-serif;
   margin-bottom: 5px;
 }
 
@@ -163,8 +161,12 @@ img {
   margin: auto;
 }
 
+.emojiCounter {
+  margin-right: 1.5rem;
+}
+
 @media only screen and (max-width: 637px) {
-  .postUserContainer p{
+  .postUserContainer p {
     font-size: 0.8rem;
   }
 
@@ -172,4 +174,3 @@ img {
     font-size: 0.7rem;
   }
 }
-
