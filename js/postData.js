@@ -14,6 +14,10 @@ document.addEventListener("keydown", (e) => {
 });
 
 const addPost = (e) => {
+  if (postText.value == "") {
+    return;
+  }
+
   const postInfo = {
     Description: postText.value,
     URL: url,

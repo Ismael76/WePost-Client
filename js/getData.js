@@ -75,7 +75,7 @@ const getPosts = async () => {
         postContainer.append(commentContainer);
 
         commentForm.setAttribute("id", "c-form");
-        commentForm.setAttribute("required", "");
+        commentInput.setAttribute("required", "");
         /////////////////////////////
 
         commentContainer.append(commentForm);
@@ -84,6 +84,9 @@ const getPosts = async () => {
         commentTitle.textContent = "Comments";
         commentForm.append(commentTitle);
         commentBtn.addEventListener("click", (e) => {
+          if (commentInput.value == "") {
+            return;
+          }
           const commentInfo = {
             PostID: postID,
             Description: commentInput.value,
