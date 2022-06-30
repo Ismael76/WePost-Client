@@ -15,7 +15,7 @@ describe("Testing post function", () => {
 
   test("It makes a fetch call to the API backend where all posts are stored", () => {
     const fakeSubmitEvent = {
-      // preventDefault: jest.fn(),
+      preventDefault: jest.fn(),
       target: {
         Description: { Description: "test" },
         URL: { URL: "test" },
