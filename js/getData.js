@@ -316,6 +316,7 @@ const getPosts = async () => {
 const getComments = async (id) => {
   const response = await fetch("https://rum-wepost.herokuapp.com/comments");
   const commentData = await response.json();
+
   for (let i = 0; i < commentData.length; i++) {
     if (commentData[i].PostID === id) {
       let singleCommentContainer = document.createElement("div");
