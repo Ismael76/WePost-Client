@@ -112,6 +112,8 @@ img {
   border: solid 1px #556427;
   margin-bottom: 0.5rem;
   margin-top: 1rem;
+  font-size: 1rem;
+  padding: 3px;
 }
 
 .commentContainer {
@@ -138,7 +140,7 @@ img {
 .singleCommentContainer {
   display: flex;
   align-items: center;
-  margin: 1.5rem;
+  margin: 1rem 1.5rem 1.5rem;
   border-bottom: 1px solid black;
 }
 
@@ -163,7 +165,7 @@ img {
 
 
 .emojiCounter {
-  margin-right: 1.5rem;
+  margin-right: 0.5rem;
 }
 
 
