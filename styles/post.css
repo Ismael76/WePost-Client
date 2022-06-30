@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
 .postContainer {
   word-wrap: break-word;
-  border-bottom: 1px solid gray;
-  background-color: lightgray;
+  border-bottom: 1px solid #556427;
+  background-color: #bac697; /*or #ffffff*/
   padding: 1rem;
   margin: 0.5rem 1rem 0.5rem 1rem;
-  border-radius: 15px;
+  border-radius: 10px;
+  box-shadow: #000000 5px 0px 9px 0px;
+  font-family: 'Electrolize', sans-serif;
 }
 
 .postUserContainer {
@@ -17,6 +20,8 @@
 .postUserContainer p {
   font-weight: 700;
   margin-left: 1rem;
+  margin-bottom: 0;
+  
 }
 
 .postTime {
@@ -30,13 +35,14 @@
 
 .postDescription {
   margin: 1.8rem;
+  /* width: 100%; */
 }
 
 .postReactionContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #556427;
   padding-bottom: 1rem;
 }
 
@@ -49,8 +55,8 @@ img {
 .heart {
   height: 25px;
   fill: white;
-  width: 30px;
-  height: 30px;
+  /* width: 30px;
+  height: 30px; */
   margin: 0.3rem;
 }
 
@@ -127,3 +133,14 @@ img {
   color: black;
   margin: auto;
 }
+
+@media only screen and (max-width: 637px) {
+  .postUserContainer p{
+    font-size: 0.8rem;
+  }
+
+  .postUserContainer > .postTime {
+    font-size: 0.7rem;
+  }
+}
+
