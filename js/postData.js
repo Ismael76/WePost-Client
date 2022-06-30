@@ -37,3 +37,5 @@ const addPost = (e) => {
 };
 
 postBtn.addEventListener("click", addPost);
+
+module.exports = { addPost };
