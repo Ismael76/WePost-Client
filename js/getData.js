@@ -12,6 +12,7 @@ const getPosts = async () => {
   const sortedData = data.sort((a, b) => b.PostID - a.PostID);
 
   for (let i = 0; i < data.length; i++) {
+    const date = moment(data[i].Time).format("YYYY-MM-DD HH:mm");
     let postID = data[i].PostID;
     console.log(postID);
     let postContainer = document.createElement("section");
@@ -268,7 +269,7 @@ const getPosts = async () => {
       emojiOneNum.textContent = data[i].EmojiOne;
       emojiThreeNum.textContent = data[i].EmojiThree;
       emojiTwoNum.textContent = data[i].EmojiTwo;
-      time.textContent = data[i].Time;
+      time.textContent = date;
     } else {
       gif.setAttribute("src", data[i].URL);
       postDescription.textContent = data[i].Description;
@@ -284,7 +285,7 @@ const getPosts = async () => {
       emojiOneNum.textContent = data[i].EmojiOne;
       emojiThreeNum.textContent = data[i].EmojiThree;
       emojiTwoNum.textContent = data[i].EmojiTwo;
-      time.textContent = data[i].Time;
+      time.textContent = date;
     }
 
     postList.append(postContainer);
