@@ -178,4 +178,8 @@ img {
   .postUserContainer > .postTime {
     font-size: 0.7rem;
   }
+
+  .commentTitle {
+    font-size: 0.9rem;
+  }
 }
