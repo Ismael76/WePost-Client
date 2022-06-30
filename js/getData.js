@@ -74,8 +74,9 @@ const getPosts = async () => {
         commentTitle.classList.add("commentTitle");
         postContainer.append(commentContainer);
 
-        // Not sure where to put this
+        
         commentForm.setAttribute("id", "c-form");
+        commentForm.setAttribute('required');
         /////////////////////////////
 
         commentContainer.append(commentForm);
