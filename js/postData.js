@@ -34,7 +34,6 @@ const addPost = (e) => {
     .catch((err) => {
       console.log(err);
     });
-  location.reload();
 };
 
 postBtn.addEventListener("click", addPost);

@@ -334,7 +334,6 @@ const getComments = async (id) => {
       singleCommentContainer.append(commentTime);
     }
   }
-  location.reload();
 };
 
 getPosts();
