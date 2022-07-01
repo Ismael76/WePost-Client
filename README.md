@@ -15,8 +15,11 @@ Welcome to WePost, a community journaling webapp. WePost allows users to speak a
 ### Posts 
 ![post](./images/post.png)
 
-### Postbar and Colorbar
-![postbar](./images/postbar.png) ![colorbar](./images/color.png)
+### Postbar 
+![postbar](./images/postbar.png) 
+
+### Colorbar
+![colorbar](./images/color.png)
 
 ### Reactions and Likes
 ![reactions and likes](./images/reactions.png)
