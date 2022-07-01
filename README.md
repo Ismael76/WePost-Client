@@ -7,6 +7,29 @@ To access the live version of the website please use this following link: https:
 
 Welcome to WePost, a community journaling webapp. WePost allows users to speak about whatever is on their minds through posts. No information about the poster is shared so you can make posts anonymously without any worries!
 
+# Features
+
+### Header
+![header](./images/header.png)
+
+### Posts 
+![post](./images/post.png)
+
+### Postbar
+![postbar](./images/postbar.png)
+
+### Colorbar
+![colorbar](./images/color.png)
+
+### Reactions and Likes
+![reactions and likes](./images/reactions.png)
+
+### Comment bar
+![comment input](./images/commentbar.png)
+
+### Comments
+![comments](./images/comments.png)
+
 # Implementation
 
 ## Installation & Usage
