@@ -97,6 +97,7 @@ Throughout the development stages of the project several meetings took place ove
 
 ## Wins & Challenges
 
+
 # Licence
 
 [MIT licence](https://opensource.org/licenses/mit-license.php)
