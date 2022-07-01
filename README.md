@@ -97,6 +97,17 @@ Throughout the development stages of the project several meetings took place ove
 
 ## Wins & Challenges
 
+### Wins
+
+- Implemented the PATCH request for reactions and likes.
+- Worked well as a team with assignment of tasks evenly. 
+- Very organised work structure.
+
+### Challenges
+
+- Testing for client-side was difficult to implement.
+- Planning more at the beginning.
+
 
 # Licence
 
