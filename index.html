@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=
     , initial-scale=1.0">
+  <meta name="description"
+    content="This is a website where you can make anonymous posts about whatever you feel like posting with GIFS! ">
+  <meta name="keywords" content="Journaling, Posting, Blog">
   <title>WePost</title>
   <link rel="icon" href="./images/favicon.ico">
   <link rel="stylesheet" href="./styles/post.css">
@@ -43,7 +46,8 @@
           <h1 id="formTitle">Post</h1>
           <div class="modal-body">
             <form id="formBody">
-              <textarea name="" id="text" cols="15" rows="5" placeholder="What's Happening?" maxlength="280" required></textarea>
+              <textarea name="" id="text" cols="15" rows="5" placeholder="What's Happening?" maxlength="280"
+                required></textarea>
 
               <br>
               <div class="gifContainer example">
@@ -60,14 +64,14 @@
   </div>
   <!-- Navigation bar -->
   <header>
-    <a href="#"><i class="fa-solid fa-ghost"></i></a>
+    <a href="#" alt="Back to top"><i class="fa-solid fa-ghost"></i></a>
     <h1 id="mainTitle">WEPOST</h1>
   </header>
   <section class='main'>
     <div class='box-area'>
       <div class='post-box'>
         <div class="container">
-          <button class="show">
+          <button class="show" name="menu-btn">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
@@ -80,7 +84,8 @@
             <li class='item'><i class="fa fa-user-o icons" aria-hidden="true"></i><a href="#">Sign-In</a></li>
           </ul>
           <div class='btn-container'>
-            <button type="button" class="btn-green" data-toggle="modal" data-target="#exampleModal" class="btn-green">
+            <button type="button" class="btn-green" data-toggle="modal" data-target="#exampleModal" class="btn-green"
+              name="addPost-btn">
               <i class="fa-solid fa-pen"></i>
             </button>
           </div>
@@ -142,15 +147,15 @@
           <ul class="menu f-list">
 
             <li class='item'>
-              <input id="color-1" type="color" name="color1" value="#ffffff">
+              <input aria-label="colorChanger-btn" id="color-1" type="color" name="color1" value="#ffffff">
             </li>
             <li class='item'>
-              <input id="color-2" type="color" name="color2" value="#ffffff">
+              <input aria-label="colorChanger-btn2" id="color-2" type="color" name="color2" value="#ffffff">
             </li>
           </ul>
           <div class='btn-container'>
 
-            <button type="button" id="light" class="btn-green">
+            <button type="button" id="light" class="btn-green" name="darkMode-btn">
 
               <i class="fa-solid fa-toggle-on"></i>
             </button>

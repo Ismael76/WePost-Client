@@ -13,7 +13,6 @@ const getPosts = async () => {
 
   for (let i = 0; i < data.length; i++) {
     let postID = data[i].PostID;
-    console.log(postID);
     let postContainer = document.createElement("section");
     let postReactionContainer = document.createElement("div");
     let postUserContainer = document.createElement("div");
@@ -341,3 +340,7 @@ const getComments = async (id) => {
 };
 
 getPosts();
+
+fetchBackEnd();
+
+module.exports = { getPosts };
